@@ -4,7 +4,9 @@ import './Input.css';
 const Input = () => {
   const [toSort, setToSort] = useState('');
   const [wordDisplay, setWordDisplay] = useState();
-  let words = toSort.split(' ');
+  let wordsNoCharacters = toSort.replace(/[^a-zA-Z ]/g, '');
+  let words = wordsNoCharacters.split(' ');
+  toSort.split(' ');
   let wordCount: any = {};
   for (let i = 0; i < words.length; i++) {
     let currentWordCount = wordCount[words[i]];
